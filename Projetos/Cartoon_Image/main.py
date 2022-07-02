@@ -16,11 +16,9 @@ edges = cv2.adaptiveThreshold(gray, 255,
 # Cartoonização
 color = cv2.bilateralFilter(img, 9, 250, 250)
 cartoon = cv2.bitwise_and(color, color, mask = edges)
-
 cv2.imshow("Image", img)
 cv2.imshow("edges", edges)
 cv2.imshow("Cartoon", cartoon)
 cv2.imwrite(imagem.split()[0]+"_Cartoon.png",cartoon)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
